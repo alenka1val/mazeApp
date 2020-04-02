@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eccbea87-e18d-4a87-a5e6-8a16528807f0" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="mazeApp" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Z1GETfcXKV7Fk28bnYuwybPLQR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/views/layouts" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/public/javascripts" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eccbea87-e18d-4a87-a5e6-8a16528807f0" name="Default Changelist" comment="" />
+      <created>1583999074232</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583999074232</updated>
+      <workItem from="1583999076280" duration="42740000" />
+      <workItem from="1584692160380" duration="65060000" />
+      <workItem from="1584947984498" duration="115000" />
+      <workItem from="1585248894163" duration="22728000" />
+      <workItem from="1585552813132" duration="525000" />
+      <workItem from="1585727257534" duration="43940000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2458" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585770109373">
+      <screen x="1440" y="-188" width="2560" height="1440" />
+    </state>
+    <state x="2458" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900/1440.-188.2560.1440@1440.-188.2560.1440" timestamp="1585770109373" />
+    <state x="1757" y="167" width="639" height="729" key="find.popup" timestamp="1584282272591">
+      <screen x="1440" y="-188" width="2560" height="1440" />
+    </state>
+    <state x="1757" y="167" width="639" height="729" key="find.popup/0.0.1440.900/1440.-188.2560.1440@1440.-188.2560.1440" timestamp="1584282272591" />
+    <state x="1742" y="194" width="670" height="676" key="search.everywhere.popup" timestamp="1584280643767">
+      <screen x="1440" y="-188" width="2560" height="1440" />
+    </state>
+    <state x="1742" y="194" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/1440.-188.2560.1440@1440.-188.2560.1440" timestamp="1584280643767" />
+  </component>
+</project>

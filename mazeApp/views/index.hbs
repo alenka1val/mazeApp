@@ -1,0 +1,105 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="time">
+        <div class="row justify-content-center">
+            <h5 class="col-10">
+                Zostávajúci čas:
+            </h5>
+            <div id="countdown" class="col-2">
+                <div id="countdown-number"></div>
+            </div>
+        </div>
+    </div>
+</nav>
+<main class="container">
+    <div class="maze">
+        <div class="card bg-light">
+            <div id="maze" class="card-body row align-items-center justify-content-center">
+
+            </div>
+            <div class="card-footer bg-dark">
+                <form action="/user/{{ user }}/maze/{{ item.level }}" method="get" class="row justify-content-end mr-0">
+                    <button id="next" type="submit" class="btn btn-primary" disabled>Pokračovať</button>
+                </form>
+                <div class="row justify-content-end mr-0">
+                    <button id="retry" type="submit" class="btn btn-primary" onclick="reset()">Znova</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="info modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTitle">
+
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zavrieť</button>
+                    <form action="/user/{{ user }}/maze/{{ item.level }}" method="get">
+                        <input id="time" type="hidden" name="time" value="0">
+                        <input id="attemps" type="hidden" name="attemps" value="1">
+                        <button id="ModalNext" type="submit" class="btn btn-primary">Pokračovať</button>
+                    </form>
+                    <button id="ModalRetry" type="submit" class="btn btn-primary" onclick="reset()">Znova</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zero-level modal fade" id="zero-level" tabindex="-1" role="dialog"
+         aria-labelledby="zero-level-Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Začíname
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    Si pripravený/á?  Klikni na Začať.
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" onclick="first()">Začať</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<noscript>
+    <p>Sorry... this site requires JavaScript to generate a maze. Please enable it in your browser</p>
+</noscript>
+
+<script>
+    width = {{ item.width }};
+    height = {{ item.height }};
+    Mymatrix = "{{ item.matrix }}";
+    level = {{ item.level }};
+    user = "{{ user }}";
+
+    const canvas = document.createElement("canvas");
+
+    console.log(level);
+    if( parseInt(level) == 1){
+
+        $('.zero-level').modal({
+            backdrop: 'static',
+            keyboard: false
+        })
+        $('.zero-level').modal('show');
+    }else {
+        start();
+    }
+
+</script>
+
+

@@ -1,0 +1,116 @@
+h1{
+  padding: 3px;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#countdown {
+  position: relative;
+  /*margin: auto;
+  height: 40px;*/
+  width: 40px;
+  text-align: center;
+}
+
+#countdown-number {
+  color: white;
+  display: inline-block;
+  /*line-height: 40px;*/
+}
+
+/*svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+svg circle {
+  stroke-dasharray: 113px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke: red;
+  fill: none;
+  animation: countdown 15s linear infinite forwards;
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 113px;
+  }
+}*/
+
+#retry{
+  display: none;
+}
+
+.greeting{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  color: white;
+}
+
+.userData{
+  margin-top: 40px ;
+  background-color: #343a40;
+  padding: 50px 0;
+  color: white;
+
+}
+input{
+  width: 25%
+
+}
+
+h4{
+  color: white;
+}
+
+h5.col-10 {
+  color: white;
+  margin-bottom: 0 !important;
+}
+
+.tutorial{
+  padding: 40px;
+}
+
+.tutorial div{
+  margin: 10px;
+}
+
+div.time{
+  margin: 0 !important;
+}
+
+div.card{
+  height: 610px;
+  margin-top: 10px;
+  background-color: white !important;
+  /*border-color: #343a40;*/
+}

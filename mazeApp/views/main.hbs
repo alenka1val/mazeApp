@@ -1,0 +1,64 @@
+<!--
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Maze Generator</a>
+</nav>
+-->
+
+<main class="main">
+    <div class="greeting">
+        <div class="row align-items-center justify-content-center">
+            <h1>
+                Chceš si otestovať svoje algoritmické schopnosti?
+            </h1>
+        </div>
+        <div class="row justify-content-center time">
+            <div class="userData col-4">
+                <h2 class="row justify-content-center">
+                    Tak neváhaj a otestuj sa!
+                </h2>
+                <div>
+                    <form method="post" action="/user/store">
+                        <div class="row justify-content-center">
+                            <div class="form-group">
+                                <!--<label for="exampleInputEmail1">Email address</label>-->
+                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <button type="submit" class="btn btn-primary">Hraj!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container tutorial">
+        <h3>
+            Ako to celé funguje?
+        </h3>
+        <div class="row align-items-center justify-content-between">
+            <p class="col-8">
+                Cieľom hry je dostať červenú guličku z ľavého horného rohu bludiska do pravého dolného. <strong>Pozor</strong>  na každú úlohu máš obmedzený čas!
+
+            </p>
+
+            <div class="col-2">
+                <img src="/images/maze.png" alt="Picture of maze" style="width: 100px">
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-2">
+                <img src="/images/keyboards.png" alt="Picture of maze" style="width: 150px">
+            </div>
+
+            <p class="col-8">
+                Pre začatie stlač šípku na klávesnici v smere, ktorým sa má červená gulička pohnúť. Gulička zastaví vždy, keď si nie je istá, ktorým smerom sa má vydať. Stlačením jednej zo šípok na klávesnici jej prikážeš ktorým smerom sa vydať.
+            </p>
+        </div>
+        <div>
+            <p class="col-8">
+                Testovanie pozostáva z 10 bludísk, ktoré musíš vyriešiť. Ak ti hra nevýde na prvý krát nezúfaj. Môžeš ju opakovať. Veľa šťastia!
+            </p>
+        </div>
+    </div>
+</main>
