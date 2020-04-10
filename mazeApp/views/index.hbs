@@ -1,4 +1,7 @@
 <nav class="navbar navbar-dark bg-dark">
+    <h5 class="col-10">
+        Level: {{ item.level }}
+    </h5>
     <div class="time">
         <div class="row justify-content-center">
             <h5 class="col-10">
@@ -7,6 +10,7 @@
             <div id="countdown" class="col-2">
                 <div id="countdown-number"></div>
             </div>
+
         </div>
     </div>
 </nav>
@@ -16,19 +20,10 @@
             <div id="maze" class="card-body row align-items-center justify-content-center">
 
             </div>
-            <div class="card-footer bg-dark">
-                <form action="/user/{{ user }}/maze/{{ item.level }}" method="get" class="row justify-content-end mr-0">
-                    <button id="next" type="submit" class="btn btn-primary" disabled>Pokračovať</button>
-                </form>
-                <div class="row justify-content-end mr-0">
-                    <button id="retry" type="submit" class="btn btn-primary" onclick="reset()">Znova</button>
-                </div>
-            </div>
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="info modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    <div class="info modal fade" id="info" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -44,7 +39,6 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zavrieť</button>
                     <form action="/user/{{ user }}/maze/{{ item.level }}" method="get">
                         <input id="time" type="hidden" name="time" value="0">
                         <input id="attemps" type="hidden" name="attemps" value="1">
@@ -65,7 +59,7 @@
                     </h5>
                 </div>
                 <div class="modal-body">
-                    Si pripravený/á?  Klikni na Začať.
+                    Si pripravený/á? Klikni na Začať.
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" onclick="first()">Začať</button>
@@ -88,15 +82,22 @@
 
     const canvas = document.createElement("canvas");
 
-    console.log(level);
-    if( parseInt(level) == 1){
+    if (parseInt(level) == 1) {
 
         $('.zero-level').modal({
             backdrop: 'static',
             keyboard: false
-        })
+        });
+        document.getElementById("zero-level").addEventListener("keyup", function (e) {
+            if (e.keyCode == 13) {
+                console.log("enter");
+                e.preventDefault();
+                first();
+            }
+        });
+
         $('.zero-level').modal('show');
-    }else {
+    } else {
         start();
     }
 

@@ -34,34 +34,6 @@ body {
   /*line-height: 40px;*/
 }
 
-/*svg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  transform: rotateY(-180deg) rotateZ(-90deg);
-}
-
-svg circle {
-  stroke-dasharray: 113px;
-  stroke-dashoffset: 0px;
-  stroke-linecap: round;
-  stroke-width: 2px;
-  stroke: red;
-  fill: none;
-  animation: countdown 15s linear infinite forwards;
-}
-
-@keyframes countdown {
-  from {
-    stroke-dashoffset: 0px;
-  }
-  to {
-    stroke-dashoffset: 113px;
-  }
-}*/
-
 #retry{
   display: none;
 }
@@ -82,10 +54,7 @@ svg circle {
   color: white;
 
 }
-input{
-  width: 25%
 
-}
 
 h4{
   color: white;
@@ -113,4 +82,12 @@ div.card{
   margin-top: 10px;
   background-color: white !important;
   /*border-color: #343a40;*/
+}
+
+div.experiment{
+  margin-top: 40px;
+}
+
+#error {
+  height: 100vh;
 }

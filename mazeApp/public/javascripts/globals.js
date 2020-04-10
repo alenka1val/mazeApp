@@ -18,3 +18,4 @@ const maxWallsRemove = 300;
 var width, height, Mymatrix, maze, timer, user, level;
 
 var attemps = 0;
+var clicked = 0;

@@ -42,12 +42,26 @@ function start() {
             clearInterval(myGameArea.interval);
             clearInterval(timer);//
 
+
             //ModalTitle
             document.getElementById('ModalTitle').innerHTML = "Ojoj!";
-            document.getElementsByClassName('modal-body')[0].innerHTML = "<strong>Nevadí!</strong> Skúsiš to znova. Pre opakovanie úlohy klikni na <strong>znova</strong>.";
+            document.getElementsByClassName('modal-body')[0].innerHTML = "<strong>Nevadí!</strong> Skúsiš to znova. Pre opakovanie úlohy klikni na <strong>znova</strong> alebo stlač <strong>Enter</strong>";
             document.getElementById("ModalNext").style.display = "none";
-            document.getElementById("next").style.display = "none";
-            document.getElementById("retry").style.display = "block";
+
+            $('.info').modal({
+                backdrop: 'static',
+                keyboard: false
+
+            });
+
+            document.getElementById("info").addEventListener("keyup", function (e) {
+                if (e.keyCode == 13) {
+                    console.log("enter");
+                    //clearInterval(myGameArea.interval);
+                    e.preventDefault();
+                    document.getElementById("ModalRetry").click();
+                }
+            });
 
             $('.info').modal('show');
             countdown = 0;
@@ -61,9 +75,6 @@ function start() {
 function reset() {
 
     $('.info').modal('hide');
-    document.getElementById("next").style.display = "block";
-
-    document.getElementById("retry").style.display = "none";
 
     attemps=attemps+1;
 
@@ -85,7 +96,7 @@ function reset() {
 
             //ModalTitle
             document.getElementById('ModalTitle').innerHTML = "Ojoj!";
-            document.getElementsByClassName('modal-body')[0].innerHTML = "<strong>Nevadí!</strong> Skúsiš to znova. Pre opakovanie úlohy klikni na <strong>znova</strong>.";
+            document.getElementsByClassName('modal-body')[0].innerHTML = "<strong>Nevadí!</strong> Skúsiš to znova. Pre opakovanie úlohy klikni na <strong>znova</strong> alebo stlač <strong>Enter</strong>";
             document.getElementById("ModalNext").style.display = "none";
             document.getElementById("next").style.display = "none";
             document.getElementById("retry").style.display = "block";
@@ -103,3 +114,4 @@ function first() {
     $('.zero-level').modal('hide');
     start();
 }
+

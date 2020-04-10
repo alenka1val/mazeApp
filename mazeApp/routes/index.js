@@ -9,18 +9,17 @@ var url = 'mongodb://localhost:27017/test';
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('main', {title: "Great"});
+    res.render('main', {title: "Algoa"});
 });
 
 router.post('/user/:user/maze/:level/store', function (req, res, next) {
-
-    console.log(req.body);
 
     var user_maze = {
         user_id: req.params.user,
         level: req.params.level,
         time: req.body.time,
         attemps: req.body.attemps,
+        clicked: req.body.clicked
     };
 
     mongo.connect(url, function (err, db) {
@@ -119,24 +118,34 @@ router.get('/user/:user/maze/:level', function (req, res, next) {
 
         }
 
-        cursor.forEach(function (doc, err) {
-            assert.equal(null, err);
-            resultArray.push(doc);
-        }, function () {
-            //console.log(resultArray);
-            var temp = resultArray[Math.floor(Math.random() * resultArray.length)];
-            temp.level = parseInt(req.params.level) + 1;
-            //console.log(temp);
-            db.close();
-            res.render('index', {item: temp, user: req.params.user});
+        cursor.count(function(err, count) {
+            if(count == 0) {
+                console.log("Maze not found");
+                res.render('error', {message: "Maze not fount.", solution: "Need to add maze in database"})
+            }else {
+                cursor.forEach(function (doc, err) {
+                    assert.equal(null, err);
+                    resultArray.push(doc);
+                }, function () {
+                    //console.log(resultArray);
+                    var temp = resultArray[Math.floor(Math.random() * resultArray.length)];
+                    temp.level = parseInt(req.params.level) + 1;
+                    //console.log(temp);
+                    db.close();
+                    res.render('index', {item: temp, user: req.params.user});
+                });
+            }
         });
     });
 });
 
 
 router.post('/user/store', function (req, res, next) {
+
     var user = {
         email: req.body.email,
+        subjects: req.body.subjects,
+        prediction: req.body.prediction,
     };
 
     mongo.connect(url, function (err, db) {
@@ -149,5 +158,35 @@ router.post('/user/store', function (req, res, next) {
         });
     });
 });
+
+/*router.get('/try', function (req, res, next) {
+
+    var resultArray = [];
+
+    mongo.connect(url, function (err, db) {
+        assert.equal(null, err);
+
+        var cursor= db.collection('maze').find({"_id" : "5e76755539d7b22f80685102"});
+
+        cursor.count(function(err, count) {
+            if(count == 0) {
+                console.log("Maze not found");
+                res.render('error', {message: "Maze not fount.", solution: "Need to add maze in database"})
+            }else {
+                cursor.forEach(function (doc, err) {
+                    assert.equal(null, err);
+                    resultArray.push(doc);
+                }, function () {
+                    //console.log(resultArray);
+                    var temp = resultArray[Math.floor(Math.random() * resultArray.length)];
+                    temp.level = parseInt(req.params.level) + 1;
+                    //console.log(temp);
+                    db.close();
+                    res.render('index', {item: temp, user: req.params.user});
+                });
+            }
+        });
+    });
+});*/
 
 module.exports = router;
